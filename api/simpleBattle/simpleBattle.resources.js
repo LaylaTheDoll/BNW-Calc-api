@@ -5,6 +5,7 @@ const simpleBattle = require('./simpleBattle');
 
 
 router.post('/simulate', (req, res, next) => {
+    JSON.stringify(req.body);
     simpleBattle.simulate(req.body).then((result) => {
         let baseResponse = {
             serviceStatus: 200,
