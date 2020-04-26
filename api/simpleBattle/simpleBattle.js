@@ -6,7 +6,7 @@
 */
 
 
-let simulate = function(body){
+let simulate = function(body){ //função principal
     return new Promise((resolve, reject) => {
         console.log(JSON.stringify(body));
         const atkRoll = d20();
@@ -29,12 +29,12 @@ let simulate = function(body){
         return (check >= 0);
     }
 
-    let finalAtk = function(body,atkRoll){
+    let finalAtk = function(body,atkRoll){ //funcão para verificação de dano
         let atk = critDMG(body, atkRoll);
         return atk - body.defenders[0].resistance;
     }
 
-        let critDMG = function(body, atkRoll){
+        let critDMG = function(body, atkRoll){ //funcão para verificação de dano crítico
             let damage = body.attacker.damage;
             let isCritOk = checkCrit(body, atkRoll);
             return (isCritOk
