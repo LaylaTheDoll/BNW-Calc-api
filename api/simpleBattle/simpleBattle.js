@@ -9,8 +9,8 @@
 let simulate = function(body){ //função principal
     return new Promise((resolve, reject) => {
         console.log(JSON.stringify(body));
-        const atkRoll = 1;
-        const defRoll = 1;
+        const atkRoll = d20();
+        const defRoll = d20();
         
         let isAtkOk = checkAtk(body, atkRoll, defRoll);
         let dmg = finalAtk(body, atkRoll, defRoll);
